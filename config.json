@@ -1,0 +1,122 @@
+{
+  "log": {
+    //"access": "/var/log/v2ray/access.log",
+    //"error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 8080,
+      "protocol": "vmess",
+      "settings": {
+        "udp": true,
+        "clients": [
+          {
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "level": 1,
+            "alterId": 32
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "tcp",
+        "tcpSettings": {
+          "header": {
+            "type": "http"
+          }
+        }
+      }
+    },
+    {
+      "port": 8081,
+      "protocol": "vmess",
+      "settings": {
+        "udp": true,
+        "clients": [
+          {
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "level": 1,
+            "alterId": 32
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "ws",
+        "wsSettings": {
+          "path": "/test",
+          "header": {}
+        }
+      }
+    },
+    {
+      "port": 8082,
+      "protocol": "vmess",
+      "settings": {
+        "udp": true,
+        "clients": [
+          {
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "level": 1,
+            "alterId": 32
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "tcp",
+        "tcpSettings": {}
+      }
+    },
+    {
+      "protocol": "shadowsocks",
+      "port": 8083,
+      "settings": {
+        "method": "aes-128-gcm",
+        "password": "v2rayzhj",
+        "udp": true
+      }
+    },
+    {
+      "protocol": "shadowsocks",
+      "port": 444,
+      "settings": {
+        "method": "aes-256-cfb",
+        "password": "kingze123456",
+        "udp": true
+      }
+    },
+    {
+      "port": 8090,
+      "protocol": "vmess",
+      "settings": {
+        "udp": true,
+        "clients": [
+          {
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "level": 1,
+            "alterId": 32
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "mkcp",
+        "kcpSettings": {
+          "security": "none",
+          "key": "",
+          "header": {
+            "type": "wechat-video"
+          }
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
+}
+

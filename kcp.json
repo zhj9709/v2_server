@@ -1,0 +1,38 @@
+{
+  "log": {
+    //"access": "/var/log/v2ray/access.log",
+    //"error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 8090,
+      "protocol": "vmess",
+      "settings": {
+        "udp": true,
+        "clients": [
+          {
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "level": 1,
+            "alterId": 8
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "kcpSettings": {
+          "header": {
+            "type": "wireguard"
+          }
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
+}
+

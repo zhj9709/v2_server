@@ -1,0 +1,76 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "mtp-in",
+      "protocol": "mtproto",
+      "port": 6666,
+      "settings": {
+        "users": [{
+          "secret": "1cba11862a20a290a8fedce75f10eac0"
+        }]
+      }
+    },
+    {
+      "tag": "vmess-in",
+      "protocol": "vmess",
+      "port": 8088,
+      "settings": {
+        "udp": true,
+        "clients": [
+          {
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "level": 1,
+            "alterId": 32
+          }
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "server-out",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [{
+          "address": "0.0.0.0",
+          "port": 8088,
+          "users": [{
+            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
+            "alterId": 32
+          }]
+        }]
+      }
+    },
+    {
+      "tag": "vmess-out",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "mtp-out",
+      "protocol": "mtproto",
+      "settings": {},
+      "proxySettings": {
+        "tag": "server-out"
+      }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": ["vmess-in"],
+        "outboundTag": "vmess-out"
+      },
+      {
+        "type": "field",
+        "inboundTag": ["mtp-in"],
+        "outboundTag": "mtp-out"
+      }
+    ]
+  }
+}
