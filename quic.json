@@ -6,7 +6,7 @@
   },
   "inbounds": [
     {
-      "port": 8090,
+      "port": 8091,
       "protocol": "vmess",
       "settings": {
         "udp": true,
