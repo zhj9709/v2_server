@@ -24,7 +24,7 @@
           "security": "none",
           "key": "",
           "header": {
-            "type": "none"
+            "type": "wireguard"
           }
         }
       }

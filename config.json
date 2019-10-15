@@ -86,30 +86,6 @@
         "password": "kingze123456",
         "udp": true
       }
-    },
-    {
-      "port": 8090,
-      "protocol": "vmess",
-      "settings": {
-        "udp": true,
-        "clients": [
-          {
-            "id": "f80a70a1-9d36-18f9-56a8-79e4d6fc8019",
-            "level": 1,
-            "alterId": 32
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "mkcp",
-        "kcpSettings": {
-          "security": "none",
-          "key": "",
-          "header": {
-            "type": "wechat-video"
-          }
-        }
-      }
     }
   ],
   "outbounds": [
